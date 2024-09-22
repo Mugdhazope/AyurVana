@@ -1,384 +1,451 @@
 <!DOCTYPE html>
-<html lang="zxx">
+<html lang="en">
 <head>
-	<title>Game Warrior Template</title>
-	<meta charset="UTF-8">
-	<meta name="description" content="Game Warrior Template">
-	<meta name="keywords" content="warrior, game, creative, html">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- Favicon -->   
-	<link href="img/favicon.ico" rel="shortcut icon"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About AYUSH - AYUSH Virtual Experience</title>
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnH1z1lQo6eGRIflj7U5bGZcK86FXkMBUuE+1/HlO+2M0G/pyFQ0I1bvPFRI4nydFzYkZtSWw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<!-- Google Fonts -->
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i" rel="stylesheet">
+    <style>
+        /* General Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
 
-	<!-- Stylesheets -->
-	<link rel="stylesheet" href="css/bootstrap.min.css"/>
-	<link rel="stylesheet" href="css/font-awesome.min.css"/>
-	<link rel="stylesheet" href="css/owl.carousel.css"/>
-	<link rel="stylesheet" href="css/style.css"/>
-	<link rel="stylesheet" href="css/animate.css"/>
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+        }
 
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
 
-	<!--[if lt IE 9]>
-	  <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-	  <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
+        /* Header Styles */
+        .header {
+            background-color: #4CAF50;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
 
+        .logo img {
+            width: 150px;
+        }
+
+        .navbar {
+            float: right;
+            margin-top: -50px;
+        }
+
+        .navbar ul {
+            list-style: none;
+        }
+
+        .navbar ul li {
+            display: inline-block;
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover,
+        .navbar ul li a.active {
+            color: #FFD700;
+        }
+
+        /* About AYUSH Section */
+        .about-ayush-section {
+            padding: 60px 0;
+            background: url('img/about-bg.jpg') no-repeat center center/cover;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h1 {
+            font-size: 36px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            font-size: 18px;
+            color: #FFD700;
+        }
+
+        .about-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .about-block {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1 1 45%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-block h2 {
+            font-size: 24px;
+            color: #4CAF50;
+            margin-bottom: 15px;
+        }
+
+        .about-block p {
+            font-size: 16px;
+            color: #555;
+            text-align: justify;
+        }
+
+        /* Team Section */
+        .team-section {
+            padding: 60px 0;
+            background-color: #fff;
+        }
+
+        .team-section .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .team-section .section-title h2 {
+            font-size: 32px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .team-section .section-title p {
+            font-size: 18px;
+            color: #777;
+        }
+
+        .team-members {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .team-member {
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            width: 220px;
+            text-align: center;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .team-member:hover {
+            transform: translateY(-10px);
+        }
+
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .team-member h3 {
+            font-size: 20px;
+            color: #4CAF50;
+            margin-bottom: 5px;
+        }
+
+        .team-member p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 40px 0;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: space-between;
+        }
+
+        .footer-about,
+        .footer-links,
+        .footer-contact {
+            flex: 1 1 30%;
+        }
+
+        .footer-about h3,
+        .footer-links h4,
+        .footer-contact h4 {
+            font-size: 20px;
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .footer-about p,
+        .footer-links ul,
+        .footer-contact p {
+            font-size: 16px;
+            color: #ccc;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links ul li a:hover {
+            color: #FFD700;
+        }
+
+        .footer-contact .social-icons a {
+            display: inline-block;
+            margin-right: 10px;
+            color: #ccc;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact .social-icons a:hover {
+            color: #FFD700;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            margin-top: 30px;
+            border-top: 1px solid #444;
+            padding-top: 20px;
+        }
+
+        .footer-bottom p {
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .navbar {
+                float: none;
+                text-align: center;
+                margin-top: 10px;
+            }
+
+            .navbar ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-block {
+                flex: 1 1 100%;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .footer-about,
+            .footer-links,
+            .footer-contact {
+                flex: 1 1 100%;
+            }
+
+            .team-members {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 <body>
-	<!-- Page Preloder -->
-	<div id="preloder">
-		<div class="loader"></div>
-	</div>
 
-	<!-- Header section -->
-	<header class="header-section">
-		<div class="container">
-			<!-- logo -->
-			<a class="site-logo" href="index.html">
-				<img src="img/logo.png" alt="">
-			</a>
-			<div class="user-panel">
-				<a href="#">Login</a>  /  <a href="#">Register</a>
-			</div>
-			<!-- responsive -->
-			<div class="nav-switch">
-				<i class="fa fa-bars"></i>
-			</div>
-			<!-- site menu -->
-			<nav class="main-menu">
-				<ul>
-					<li><a href="index.html">Home</a></li>
-					<li><a href="review.html">Games</a></li>
-					<li><a href="categories.html">Blog</a></li>
-					<li><a href="community.html">Forums</a></li>
-					<li><a href="contact.html">Contact</a></li>
-				</ul>
-			</nav>
-		</div>
-	</header>
-	<!-- Header section end -->
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="img/logo.png" alt="AYUSH Virtual Experience Logo">
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about-ayush.html" class="active">About AYUSH</a></li>
+                    <li><a href="forums.html">Forums</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <!-- About AYUSH Section -->
+    <section class="about-ayush-section">
+        <div class="container">
+            <div class="section-title">
+                <h1>About AYUSH</h1>
+                <p>Embracing the Ancient Wisdom for Modern Wellness</p>
+            </div>
 
-	<!-- Latest news section -->
-	<div class="latest-news-section">
-		<div class="ln-title">Latest News</div>
-		<div class="news-ticker">
-			<div class="news-ticker-contant">
-				<div class="nt-item"><span class="new">new</span>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="strategy">strategy</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-				<div class="nt-item"><span class="racing">racing</span>Isum dolor sit amet, consectetur adipiscing elit. </div>
-			</div>
-		</div>
-	</div>
-	<!-- Latest news section end -->
+            <div class="about-content">
+                <!-- AYUSH Overview -->
+                <div class="about-block">
+                    <h2>What is AYUSH?</h2>
+                    <p>AYUSH stands for Ayurveda, Yoga & Naturopathy, Unani, Siddha, and Homeopathy. It represents the traditional systems of medicine practiced in India, focusing on holistic health and well-being by integrating body, mind, and spirit.</p>
+                </div>
 
+                <!-- Ayurveda -->
+                <div class="about-block">
+                    <h2>Ayurveda</h2>
+                    <p>Ayurveda, the "Science of Life," is an ancient Indian system of medicine that emphasizes balance in the body through diet, herbal remedies, meditation, and yoga. It aims to promote longevity and vitality by addressing the root cause of diseases and imbalances rather than just treating symptoms.</p>
+                </div>
 
-	<!-- Page info section -->
-	<section class="page-info-section set-bg" data-setbg="img/page-top-bg/3.jpg">
-		<div class="pi-content">
-			<div class="container">
-				<div class="row">
-					<div class="col-xl-5 col-lg-6 text-white">
-						<h2>Game reviews</h2>
-						<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris scelerisque, at rutrum nulla dictum.</p>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Page info section -->
+                <!-- Yoga & Naturopathy -->
+                <div class="about-block">
+                    <h2>Yoga & Naturopathy</h2>
+                    <p>Yoga is a spiritual and ascetic discipline that includes breath control, simple meditation, and the adoption of specific bodily postures. It is widely practiced for health and relaxation. Naturopathy focuses on natural remedies and the body's ability to heal and maintain itself through treatments like fasting, nutrition, and hydrotherapy.</p>
+                </div>
 
+                <!-- Unani -->
+                <div class="about-block">
+                    <h2>Unani</h2>
+                    <p>Unani medicine, also known as Unani Tibb, is a traditional system of healing and health maintenance observed in South Asia. It is based on the teachings of Hippocrates and Galen and focuses on the balance of bodily fluids or humors to maintain health. Treatments include herbal medicine, dietary practices, and lifestyle modifications.</p>
+                </div>
 
-	<!-- Page section -->
-	<section class="page-section review-page spad">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/5.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Overwatch Halloween</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/6.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Grand Theft Auto</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/7.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Avatar</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/8.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Anthem</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/9.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Cyberpunk 2077</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/10.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h4>Spiderman</h4>
-							<div class="rating">
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star"></i>
-								<i class="fa fa-star is-fade"></i>
-							</div>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame. Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="text-center pt-4">
-				<button class="site-btn btn-sm">Load More</button>
-			</div>
-		</div>
-	</section>
-	<!-- Page section end -->
+                <!-- Siddha -->
+                <div class="about-block">
+                    <h2>Siddha</h2>
+                    <p>The Siddha system is one of the oldest traditional medicines in the world, originating in South India. It is based on the principles of natural healing and emphasizes a holistic approach to treating the mind, body, and soul through alchemy, herbal medicine, and lifestyle practices.</p>
+                </div>
 
+                <!-- Homeopathy -->
+                <div class="about-block">
+                    <h2>Homeopathy</h2>
+                    <p>Homeopathy is a natural form of medicine that uses highly diluted substances to trigger the body’s natural healing process. It is based on the principle of "like cures like," meaning a substance that causes symptoms in a healthy person can be used to treat similar symptoms in a sick person.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-	<!-- Review section -->
-	<section class="review-section review-dark spad set-bg" data-setbg="img/review-bg-2.jpg">
-		<div class="container">
-			<div class="section-title text-white">
-				<div class="cata new">new</div>
-				<h2>Recent Reviews</h2>
-			</div>
-			<div class="row text-white">
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/1.jpg">
-							<div class="score yellow">9.3</div>
-						</div>
-						<div class="review-text">
-							<h5>Assasin’’s Creed</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/2.jpg">
-							<div class="score purple">9.5</div>
-						</div>
-						<div class="review-text">
-							<h5>Doom</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/3.jpg">
-							<div class="score green">9.1</div>
-						</div>
-						<div class="review-text">
-							<h5>Overwatch</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-3 col-md-6">
-					<div class="review-item">
-						<div class="review-cover set-bg" data-setbg="img/review/4.jpg">
-							<div class="score pink">9.7</div>
-						</div>
-						<div class="review-text">
-							<h5>GTA</h5>
-							<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Review section end -->
+    <!-- Team Section -->
+    <section class="team-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Team</h2>
+                <p>Meet the passionate individuals behind AYUSH Virtual Experience</p>
+            </div>
 
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="img/team-member1.jpg" alt="Team Member 1">
+                    <h3>Dr. Anjali Sharma</h3>
+                    <p>Ayurveda Specialist</p>
+                </div>
 
-	<!-- Footer top section -->
-	<section class="footer-top-section">
-		<div class="container">
-			<div class="footer-top-bg">
-				<img src="img/footer-top-bg.png" alt="">
-			</div>
-			<div class="row">
-				<div class="col-lg-4">
-					<div class="footer-logo text-white">
-						<img src="img/footer-logo.png" alt="">
-						<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum dolor sit ame.</p>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget mb-5 mb-md-0">
-						<h4 class="fw-title">Latest Posts</h4>
-						<div class="latest-blog">
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/1.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/2.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-							<div class="lb-item">
-								<div class="lb-thumb set-bg" data-setbg="img/latest-blog/3.jpg"></div>
-								<div class="lb-content">
-									<div class="lb-date">June 21, 2018</div>
-									<p>Lorem ipsum dolor sit amet, consectetur adipisc ing ipsum </p>
-									<a href="#" class="lb-author">By Admin</a>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="footer-widget">
-						<h4 class="fw-title">Top Comments</h4>
-						<div class="top-comment">
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/1.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/2.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/3.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-							<div class="tc-item">
-								<div class="tc-thumb set-bg" data-setbg="img/authors/4.jpg"></div>
-								<div class="tc-content">
-									<p><a href="#">James Smith</a> <span>on</span>  Lorem ipsum dolor sit amet, co</p>
-									<div class="tc-date">June 21, 2018</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Footer top section end -->
+                <div class="team-member">
+                    <img src="img/team-member2.jpg" alt="Team Member 2">
+                    <h3>Dr. Vikram Singh</h3>
+                    <p>Yoga & Naturopathy Expert</p>
+                </div>
 
-	
-	<!-- Footer section -->
-	<footer class="footer-section">
-		<div class="container">
-			<ul class="footer-menu">
-				<li><a href="index.html">Home</a></li>
-				<li><a href="review.html">Games</a></li>
-				<li><a href="categories.html">Blog</a></li>
-				<li><a href="community.html">Forums</a></li>
-				<li><a href="contact.html">Contact</a></li>
-			</ul>
-			<p class="copyright"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
-<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-</p>
-		</div>
-	</footer>
-	<!-- Footer section end -->
+                <div class="team-member">
+                    <img src="img/team-member3.jpg" alt="Team Member 3">
+                    <h3>Dr. Fatima Khan</h3>
+                    <p>Unani Practitioner</p>
+                </div>
 
+                <div class="team-member">
+                    <img src="img/team-member4.jpg" alt="Team Member 4">
+                    <h3>Dr. Ramesh Kumar</h3>
+                    <p>Siddha Specialist</p>
+                </div>
 
-	<!--====== Javascripts & Jquery ======-->
-	<script src="js/jquery-3.2.1.min.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/owl.carousel.min.js"></script>
-	<script src="js/jquery.marquee.min.js"></script>
-	<script src="js/main.js"></script>
-    </body>
+                <div class="team-member">
+                    <img src="img/team-member5.jpg" alt="Team Member 5">
+                    <h3>Dr. Priya Mehta</h3>
+                    <p>Homeopathy Expert</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- About Section -->
+                <div class="footer-about">
+                    <h3>About AYUSH</h3>
+                    <p>AYUSH Virtual Experience aims to bring the wisdom of traditional Indian medicine to the forefront, promoting holistic health and well-being for all. We are dedicated to providing accurate and accessible information on Ayurveda, Yoga & Naturopathy, Unani, Siddha, and Homeopathy.</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about-ayush.html">About AYUSH</a></li>
+                        <li><a href="forums.html">Forums</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-contact">
+                    <h4>Contact Us</h4>
+                    <p>Email: info@ayushvirtualexperience.com</p>
+                    <p>Phone: +91 1234 567 890</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 AYUSH Virtual Experience. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
 </html>
